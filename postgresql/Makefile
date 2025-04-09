@@ -25,17 +25,14 @@ stop:
 	docker rm ${CONTAINER}
 
 shell:
-	docker exec -it some-postgres bash
+	docker exec -it ${CONTAINER} bash
 
 cli:
-	docker exec -it some-postgres psql
-
-local-cli:
-	PGPASSWORD=mysecretpassword psql -U root -h 127.0.0.1 -p 5432
+	docker exec -it ${CONTAINER} sql
 
 start-web:
 	docker run \
-        --name pgadmin-container \
+        --name ${CONTAINER_WEB} \
 		-p 5050:80 \
 		--mount source=pg_vol,target=/var/lib/postgresql/data \
 		-e PGADMIN_DEFAULT_EMAIL=user@domain.com \
