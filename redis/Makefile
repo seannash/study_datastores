@@ -5,7 +5,7 @@ pull:
 	docker pull ${IMAGE}
 
 start:
-	docker run --name ${CONTAINER} -p 6379:6370 --hostname $CONTAINER -d ${IMAGE}
+	docker run --name ${CONTAINER} -p 6379:6370 --hostname ${CONTAINER} -d ${IMAGE}
 
 stop:
 	docker stop ${CONTAINER}
