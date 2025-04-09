@@ -24,7 +24,7 @@ stop:
 	docker stop ${CONTAINER}
 	docker rm ${CONTAINER}
 
-cli:
+shell:
 	docker exec -it some-postgres bash
 
 cli:
@@ -46,6 +46,3 @@ start-web:
 stop-web:
 	docker stop ${CONTAINER_WEB}
 	docker rm ${CONTAINER_WEB}
-
-shell:
-	docker exec -it ${CONTAINER} bash
