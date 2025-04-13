@@ -28,7 +28,7 @@ shell:
 	docker exec -it ${CONTAINER} bash
 
 cli:
-	docker exec -it ${CONTAINER} sql
+	docker exec -it ${CONTAINER} psql
 
 start-web:
 	docker run \
